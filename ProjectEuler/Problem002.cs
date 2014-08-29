@@ -8,13 +8,13 @@ namespace ProjectEuler
 {
     public class Problem002
     {
-        public static int Run(int number = 4 * 1000 * 1000)
+        public static long Run(long number = 4 * 1000 * 1000)
         {
             var sequence = GetFibonacciSequence(number);
             return sequence.Where(n => n % 2 == 0).Sum();
         }
 
-        public static IEnumerable<int> GetFibonacciSequence(int number)
+        public static IEnumerable<long> GetFibonacciSequence(long number)
         {
             var x = 0;
             var y = 1;
