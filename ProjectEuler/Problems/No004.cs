@@ -13,10 +13,10 @@ Find the largest palindrome made from the product of two 3-digit numbers.")]
     [Answer(906609)]
     public class No004
     {
-        public long Run(long number = 3)
+        public long Run(long n = 3)
         {
-            var min = (int)Math.Pow(10, number - 1);
-            var max = (int)Math.Pow(10, number) - 1;
+            var min = (int)Math.Pow(10, n - 1);
+            var max = (int)Math.Pow(10, n) - 1;
 
             var numbers = from x in Enumerable.Range(min, max - min + 1)
                           from y in Enumerable.Range(min, max - min + 1)

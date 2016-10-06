@@ -13,14 +13,14 @@ What is the smallest positive number that is evenly divisible by all of the numb
     [Answer(232792560)]
     public class No005
     {
-        public long Run(long number = 20)
+        public long Run(long n = 20)
         {
             var factors = new List<long>();
 
-            var primes = GetPrimes(number);
+            var primes = GetPrimes(n);
             foreach (var prime in primes)
             {
-                factors.Add(GetMaxPower(prime, number));
+                factors.Add(GetMaxPower(prime, n));
             }
 
             return factors.Aggregate(1L, (total, next) => total * next);

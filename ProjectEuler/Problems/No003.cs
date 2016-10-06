@@ -13,9 +13,9 @@ What is the largest prime factor of the number 600851475143 ?")]
     [Answer(6857)]
     public class No003
     {
-        public long Run(long number = 600851475143)
+        public long Run(long n = 600851475143)
         {
-            var max = (long)Math.Sqrt(number) + 1;
+            var max = (long)Math.Sqrt(n) + 1;
 
             var primes = GetPrimes(max);
 
@@ -23,7 +23,7 @@ What is the largest prime factor of the number 600851475143 ?")]
 
             while (true)
             {
-                if (number % primes[i] == 0)
+                if (n % primes[i] == 0)
                 {
                     break;
                 }

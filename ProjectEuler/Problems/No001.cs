@@ -11,10 +11,10 @@ Find the sum of all the multiples of 3 or 5 below 1000.")]
     [Answer(233168)]
     public class No001
     {
-        public long Run(long number = 1000)
+        public long Run(long n = 1000)
         {
-            return Enumerable.Range(1, (int)number - 1)
-                .Where(n => n % 3 == 0 || n % 5 == 0)
+            return Enumerable.Range(1, (int)n - 1)
+                .Where(i => i % 3 == 0 || i % 5 == 0)
                 .Sum();
         }
     }

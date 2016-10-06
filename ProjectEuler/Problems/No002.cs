@@ -14,10 +14,10 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
     [Answer(4613732)]
     public class No002
     {
-        public long Run(long number = 4 * 1000 * 1000)
+        public long Run(long n = 4 * 1000 * 1000)
         {
-            var sequence = GetFibonacciSequence(number);
-            return sequence.Where(n => n % 2 == 0).Sum();
+            var sequence = GetFibonacciSequence(n);
+            return sequence.Where(f => f % 2 == 0).Sum();
         }
 
         public IEnumerable<long> GetFibonacciSequence(long number)
