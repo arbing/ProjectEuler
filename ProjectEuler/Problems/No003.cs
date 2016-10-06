@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using ProjectEuler.Attributes;
 
 namespace ProjectEuler.Problems
@@ -43,7 +42,7 @@ What is the largest prime factor of the number 600851475143 ?")]
                 CheckAndAddPrime(i, primes);
             }
 
-            return primes.ToList();
+            return primes;
         }
 
         public static bool CheckAndAddPrime(long n, List<long> primes)
