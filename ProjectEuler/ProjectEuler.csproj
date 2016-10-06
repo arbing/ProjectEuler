@@ -41,17 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problem005.cs" />
-    <Compile Include="Problem004.cs" />
-    <Compile Include="Problem003.cs" />
-    <Compile Include="Problem002.cs" />
-    <Compile Include="Problem001.cs" />
+    <Compile Include="Attributes\AnswerAttribute.cs" />
+    <Compile Include="Attributes\NoAttribute.cs" />
+    <Compile Include="Attributes\TitleAttribute.cs" />
+    <Compile Include="CalculateTiming.cs" />
+    <Compile Include="Problems\No005.cs" />
+    <Compile Include="Problems\No004.cs" />
+    <Compile Include="Problems\No003.cs" />
+    <Compile Include="Problems\No002.cs" />
+    <Compile Include="Problems\No001.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
