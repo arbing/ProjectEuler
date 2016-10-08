@@ -33,16 +33,21 @@ What is the value of the first triangle number to have over five hundred divisor
 
                 var factor = 0;
 
-                var sqrt = Math.Sqrt(triangular) + 1;
+                var sqrt = (int)Math.Sqrt(triangular) + 1;
                 for (int j = 1; j < sqrt; j++)
                 {
                     if (triangular % j == 0)
                     {
-                        factor++;
+                        factor += 2;
                     }
                 }
 
-                if (factor >= n / 2)
+                if (triangular == sqrt * sqrt)
+                {
+                    factor--;
+                }
+
+                if (factor >= n)
                 {
                     return triangular;
                 }
