@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using ProjectEuler.Attributes;
 
@@ -13,9 +14,27 @@ Find the sum of all the multiples of 3 or 5 below 1000.")]
     {
         public long Run(long n = 1000)
         {
-            return Enumerable.Range(1, (int)n - 1)
+            return SumDivisibleBy(n - 1, 3) + SumDivisibleBy(n - 1, 5) - SumDivisibleBy(n - 1, 3 * 5);
+        }
+
+        public long SumDivisibleBy(long max, long n)
+        {
+            var p = max / n;
+
+            return n * (p * (p + 1)) / 2;
+        }
+
+        public long Run1(long n = 1000000)
+        {
+            return LongRangeIterator(1, (int)n - 1)
                 .Where(i => i % 3 == 0 || i % 5 == 0)
                 .Sum();
+        }
+
+        private static IEnumerable<long> LongRangeIterator(long start, long count)
+        {
+            for (long i = 0; i < count; ++i)
+                yield return start + i;
         }
     }
 }
