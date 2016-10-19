@@ -15,6 +15,47 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
     {
         public long Run(long n = 1000 * 1000)
         {
+            var countLex = 0L;
+            var lex = "";
+            var num = Enumerable.Range(0, 10).ToList();
+
+            while (true)
+            {
+                var i = 0;
+
+                var f = Factorial(num.Count - 1);
+
+                while (countLex + f < n)
+                {
+                    countLex += f;
+                    i++;
+                }
+
+                lex += num[i].ToString();
+                num.RemoveAt(i);
+
+                if (num.Count == 0)
+                {
+                    break;
+                }
+            }
+
+            return long.Parse(lex);
+        }
+
+        public long Factorial(int n)
+        {
+            var mul = 1;
+            for (int i = n; i > 0; i--)
+            {
+                mul *= i;
+            }
+
+            return mul;
+        }
+
+        public long Run1(long n = 1000 * 1000)
+        {
             var lex = 123456789L;
             var countLex = 0;
 
