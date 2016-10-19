@@ -60,6 +60,7 @@ namespace ProjectEuler
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     continue;
                 }
             }
