@@ -23,7 +23,8 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
         public long Run(int n = 5)
         {
             var numbers = new List<int>();
-            for (int i = 2; i < (int)Math.Pow(10, n + 1); i++)
+            var max = GetMaxSum(n);
+            for (int i = 2; i < max; i++)
             {
                 if (i == SumPowers(i, n))
                 {
@@ -32,6 +33,17 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
             }
 
             return numbers.Sum();
+        }
+
+        private int GetMaxSum(int n)
+        {
+            var max = (int)Math.Pow(9, n) * n;
+            if (max.ToString().Length > n)
+            {
+                max = (int)Math.Pow(9, n) * max.ToString().Length;
+            }
+
+            return max;
         }
 
         private int SumPowers(int n, int p)
