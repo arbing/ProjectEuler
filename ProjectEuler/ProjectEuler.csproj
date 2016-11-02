@@ -46,6 +46,7 @@
     <Compile Include="Attributes\NoAttribute.cs" />
     <Compile Include="Attributes\TitleAttribute.cs" />
     <Compile Include="CalculateTiming.cs" />
+    <Compile Include="Problems\No037.cs" />
     <Compile Include="Problems\No036.cs" />
     <Compile Include="Problems\No034.cs" />
     <Compile Include="Problems\No033.cs" />
